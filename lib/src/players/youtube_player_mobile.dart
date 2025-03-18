@@ -102,7 +102,7 @@ class _MobileYoutubePlayerState extends State<RawYoutubePlayer>
         key: ValueKey(controller.hashCode),
         initialData: InAppWebViewInitialData(
           data: player,
-          baseUrl: Uri.parse(
+          baseUrl: WebUri(
             controller.params.privacyEnhanced
                 ? 'https://www.youtube-nocookie.com'
                 : 'https://www.youtube.com',
@@ -185,8 +185,8 @@ class _MobileYoutubePlayerState extends State<RawYoutubePlayer>
     return webController.evaluateJavascript(source: methodName);
   }
 
-  Future<dynamic> _callAsyncMethod(String functionBody,
-      Map<String, dynamic>? arguments) async {
+  Future<dynamic> _callAsyncMethod(
+      String functionBody, Map<String, dynamic>? arguments) async {
     final webController = await _webController.future;
     return webController.callAsyncJavaScript(
         functionBody: functionBody, arguments: arguments ?? {});
