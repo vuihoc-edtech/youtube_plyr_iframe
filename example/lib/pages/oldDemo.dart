@@ -82,8 +82,8 @@ class _YoutubeAppDemoState extends State<OldDemo> {
         appBar: AppBar(
           backgroundColor: Colors.black,
           elevation: 0,
-          brightness: Brightness.dark,
           title: const Text('Inline Demo'),
+          systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
         body: LayoutBuilder(
           builder: (context, constraints) {
